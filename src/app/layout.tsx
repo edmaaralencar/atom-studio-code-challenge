@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { cn } from '@/lib/utils'
+import { ThemeProvider } from '@/components/providers/theme-provider'
+import { ToastProvider } from '@/components/providers/toast-provider'
+import { AuthProvider } from '@/context/auth-context'
+import { ModalsProvider } from '@/components/providers/modals-provider'
+import { ReactQueryProvider } from '@/components/providers/react-query-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +22,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ReactQueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            storageKey="discord-theme"
+          >
+            <AuthProvider>
+              {children}
+              <ModalsProvider />
+            </AuthProvider>
+            <ToastProvider />
+          </ThemeProvider>
+        </ReactQueryProvider>
+      </body>
     </html>
   )
 }
