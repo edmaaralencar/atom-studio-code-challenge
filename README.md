@@ -1,9 +1,28 @@
+Esse é um projeto desenvolvido para o teste de código da Atom Studio.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Começando
 
-First, run the development server:
+Primeiramente crie um novo app no firebase e habilite a autenticação e crie um novo banco de dados no firebase no modo teste.
+Depois, adicione as as variáveis de ambiente para conseguir rodar o app:
+```bash
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+```
 
+Depois, instale as dependências:
+```bash
+npm install
+# or
+yarn
+```
+Depois pode rodar o servidor utilizando:
 ```bash
 npm run dev
 # or
@@ -14,23 +33,22 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) com o browser para ver o resultado. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sobre a aplicação
+Ao entrar na aplicação, você vai cair na landing page, que não foi feita.
+Depois é só fazer o login e você pode utilizar a aplicação, que é um controle de jornadas com grupos.
+Você pode criar novos grupos, adicionar amigos e ir visualizando suas atividades individuais bem como a dos outros.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Stack:
+- Next.js 13
+- Tailwind CSS
+- React Hook Form
+- Shadcn UI
+- React Email
+- Nodemailer
+- Firebase
+- Recharts
+- Zod
+- Zustand
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
