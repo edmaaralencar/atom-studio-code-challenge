@@ -1,7 +1,5 @@
 Esse é um projeto desenvolvido para o teste de código da Atom Studio.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Começando
 
 Primeiramente crie um novo app no firebase e habilite a autenticação e crie um novo banco de dados no firebase no modo teste.
