@@ -13,9 +13,10 @@ import {
 import { useAuth } from '@/context/auth-context'
 import { useUsersActivities } from '@/services/hooks/use-users-activities'
 import { Fragment, useMemo, useState } from 'react'
-import { GroupedActivities, months } from '../groups/[groupId]/page'
+import { GroupedActivities } from '../groups/[groupId]/page'
 import { Pen, Trash2 } from 'lucide-react'
 import { Filters } from './_components/filters'
+import { months } from '@/utils/dates'
 
 export default function Activities() {
   const { user } = useAuth()

@@ -22,6 +22,7 @@ import { Fragment, useMemo, useState } from 'react'
 import { Filters } from './_components/filters'
 import { useDeleteActivity } from '@/services/hooks/use-delete-activity'
 import { useUpdateActivityModal } from '@/hooks/use-update-activity-modal-store'
+import { months } from '@/utils/dates'
 
 export type GroupedActivities = {
   day: number
@@ -32,21 +33,6 @@ export type GroupedActivities = {
 type ChartData = {
   name: string
   value: number
-}
-
-export const months: any = {
-  1: 'Jan',
-  2: 'Fev',
-  3: 'Mar',
-  4: 'Abr',
-  5: 'Mai',
-  6: 'Jun',
-  7: 'Jul',
-  8: 'Ago',
-  9: 'Set',
-  10: 'Out',
-  11: 'Nov',
-  12: 'Dez',
 }
 
 export default function GroupId() {
