@@ -31,7 +31,7 @@ export function NotificationDropdown() {
         queryKey: [`invitations/${user?.email}`],
       })
       queryClient.invalidateQueries({
-        queryKey: [`groups/user/${user?.email}`],
+        queryKey: [`groups/${user?.email}`],
       })
     },
   })

@@ -34,6 +34,8 @@ import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { sendInvite } from '@/services/invitations'
 import { isUserRegistered } from '@/services/users'
+import { useMutation } from '@tanstack/react-query'
+import { queryClient } from '@/lib/react-query'
 
 const formSchema = z.object({
   name: z.string().min(1, { message: 'Nome obrigatório' }),
@@ -72,6 +74,20 @@ export function CreateGroupModal() {
     onClose()
     form.reset()
   }
+
+  const createGroup = useMutation({
+    mutationFn: async (values: z.infer<typeof formSchema>) => {
+      await addDoc(collection(db, 'groups'), {
+        name: values.name,
+        description: values.description,
+        owner: user?.email,
+        participants: [user?.email],
+      })
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({queryKey: [`groups/${user?.email}`]})
+    }
+  })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const formattedParticipants = values.participants.map((item) => item.email)
