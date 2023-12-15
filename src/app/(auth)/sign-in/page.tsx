@@ -45,9 +45,11 @@ export default function SignUp() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href="/sign-up" className="absolute top-6 right-6">
-        Cadastrar
-      </Link>
+      <Button asChild>
+        <Link href="/sign-up" className="absolute top-6 right-6">
+          Cadastrar
+        </Link>
+      </Button>
       <div className="space-y-2 text-center">
         <h1 className="text-2xl font-semibold tracking-tight">Entre agora</h1>
         <p className="text-sm text-muted-foreground">
